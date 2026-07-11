@@ -1,19 +1,20 @@
 class Solution {
     public int solution(int n) {
-        
         int answer = 0;
-        boolean isEven = n % 2 == 0;
         
-        
-        for(int i = 0; i <= n ; i++){            
-            if(i % 2 == 0 && isEven){
-                answer += i * i;
+        if (n % 2 == 0) {
+            for (int i = 0; i <= n; i+=2) {
+                if (i % 2 == 0) {
+                    answer += i * i;
+                }
             }
-            if(i % 2 == 1 && !isEven)            
-            {
-                answer += i;
+        } else {
+            for (int i = 1; i <= n; i+=2) {
+                if (i % 2 == 1) {
+                    answer += i;
+                }
             }
-        }        
+        }
         
         return answer;
     }
